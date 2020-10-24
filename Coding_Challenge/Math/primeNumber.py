@@ -4,7 +4,7 @@ class Solution:
             return []
         nonePrimes = set()
         primes = []
-        x = 2 
+        x = 2
         while x <= A:
             if x not in nonePrimes:
                 primes.append(x)

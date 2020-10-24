@@ -1,13 +1,15 @@
-def fibonacciDP(n): 
-    cach = {}
+def fibonacciDP(n):
+    cache = {}
+
     def helper(n):
         if n < 2:
-            return n 
-        if n in cach.keys():
-            return cach[n]
-        cach[n] = helper(n-1) + helper(n-2)
-        return cach[n]
+            return n
+        if n in cache.keys():
+            return cache[n]
+        cache[n] = helper(n-1) + helper(n-2)
+        return cache[n]
     return helper(n)
+
 
 print(fibonacciDP(7))
 print(fibonacciDP(10))
