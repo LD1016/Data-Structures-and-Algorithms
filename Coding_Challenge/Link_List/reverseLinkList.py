@@ -1,7 +1,7 @@
 def reverseList(A):
     prev = None
     cur = A
-    while A != None:
+    while cur != None:
         fut = cur.next
         cur.next = prev
         prev = cur
