@@ -1,3 +1,22 @@
+"""
+Given an even number ( greater than 2 ), return two prime numbers whose sum 
+will be equal to given number.
+NOTE A solution will always exist. read Goldbach’s conjecture
+
+Example:
+Input : 4
+Output: 2 + 2 = 4
+
+If there are more than one solutions possible, return the lexicographically smaller solution.
+If [a, b] is one solution with a <= b,
+and [c,d] is another solution with c <= d, then
+
+[a, b] < [c, d] 
+
+If a < c OR a==c AND b < d. 
+"""
+
+
 class Solution:
     # @param A : integer
     # @return a list of integers
@@ -8,13 +27,14 @@ class Solution:
         return []
 
     def isPrime(self, A):
-        if A <= 1: 
-            return False 
+        if A <= 1:
+            return False
         upperLimit = int(A**0.5) + 1
         for i in range(2, upperLimit):
             if A % i == 0:
-                return False 
+                return False
         return True
+
 
 test = Solution()
 print(test.primesum(16777214))
