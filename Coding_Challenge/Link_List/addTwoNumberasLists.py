@@ -10,10 +10,13 @@ So, 7 -> 0 -> 8 -> 0 is not a valid response even though the value is still 807.
 """
 
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+
+
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
 
 class Solution:
     # @param A : head node of linked list
@@ -22,33 +25,31 @@ class Solution:
     def addTwoNumbers(self, A, B):
         remain = 0
         result = ListNode(1)
-        cur = result 
+        cur = result
         while A is not None and B is not None:
             temp = A.val + B.val if remain == 0 else A.val + B.val + 1
-            if temp >= 10: 
+            if temp >= 10:
                 remain = 1
-            node = ListNode(temp%10)
+            node = ListNode(temp % 10)
             cur.next = node
-            cur = cur.next 
+            cur = cur.next
         if A is not None:
             self.helper(A, cur, remain)
         elif B is not None:
             self.helper(B, cur, remain)
         elif remain == 1:
             node = ListNode(1)
-            cur.next = node 
+            cur.next = node
         return result.next
-            
-        
+
     def helper(self, A, B, R):
         node = None
         while A is not None:
             if R == 1:
                 node = ListNode(A.val + R)
-                R = 0 
+                R = 0
             else:
                 node = ListNode(A.val)
-            B.next = node 
-            B = B.next 
+            B.next = node
+            B = B.next
             A = A.next
-        

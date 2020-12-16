@@ -17,12 +17,19 @@ class Solution:
     # @param A : list of integers
     # @return an integer
     def firstMissingPositive(self, A):
-        A.sort()
-        ans = 1
+        # A.sort()
+        # ans = 1
+        # for i in A:
+        #     if i == ans:
+        #         ans += 1
+        # return ans
+        setNums = set()
         for i in A:
-            if i == ans:
-                ans += 1
-        return ans
+            setNums.add(i)
+        for i in range(1, len(A)+1):
+            if i not in setNums:
+                return i
+        return len(A)+1
 
 
 test = Solution()

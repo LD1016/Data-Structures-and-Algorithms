@@ -106,6 +106,8 @@ class LinkList:
             prev = tempHead 
         self.head = prev
         return print(self.printList())
+    
+
 
 
 myLinkList = LinkList()
